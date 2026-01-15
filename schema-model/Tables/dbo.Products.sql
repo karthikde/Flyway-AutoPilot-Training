@@ -4,7 +4,8 @@ CREATE TABLE [dbo].[Products]
 [ProductName] [nvarchar] (100) NOT NULL,
 [Price] [decimal] (10, 2) NULL,
 [Quantity] [int] NULL,
-[CreatedDate] [datetime] NULL DEFAULT (getdate())
+[CreatedDate] [datetime] NULL DEFAULT (getdate()),
+[Category] [nvarchar] (50) NULL
 )
 GO
 ALTER TABLE [dbo].[Products] ADD PRIMARY KEY CLUSTERED ([ProductID])
