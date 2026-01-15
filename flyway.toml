@@ -3,29 +3,29 @@ name = "Autopilot - FastTrack"
 databaseType = "SqlServer"
 
 [environments.development]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotDev;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotDev;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Development database"
 
 [environments.shadow]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotShadow;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotShadow;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Shadow database"
 provisioner = "clean"
 
 [environments.Prod]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotProd;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotProd;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Production Database"
 
 [environments.Test]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotTest;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotTest;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Test database"
 
 [environments.Check]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotCheck;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotCheck;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Check (Reporting) database"
 provisioner = "clean"
 
 [environments.Build]
-url = "jdbc:sqlserver://localhost;databaseName=AutopilotBuild;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://USDBATSTINFS03W;databaseName=AutopilotBuild;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
 displayName = "Build database"
 provisioner = "clean"
 
@@ -42,16 +42,16 @@ errorOverrides = [ "S0001:0:I-" ]
 [flyway.sqlserver.clean]
 mode = "all"
 
-[flyway.sqlserver.clean.schemas]
-exclude = [ "ExampleSchema1", "ExampleSchema2" ]
+  [flyway.sqlserver.clean.schemas]
+  exclude = [ "ExampleSchema1", "ExampleSchema2" ]
 
 [flywayDesktop]
 developmentEnvironment = "development"
 shadowEnvironment = "shadow"
 schemaModel = "./schema-model"
 
-[flywayDesktop.generate]
-undoScripts = true
+  [flywayDesktop.generate]
+  undoScripts = true
 
 [redgateCompare.sqlserver]
 filterFile = "Filter.scpf"
